@@ -1,0 +1,2 @@
+module TechLolSeriesHelper
+end
