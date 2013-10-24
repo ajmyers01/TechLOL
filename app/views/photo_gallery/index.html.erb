@@ -1,78 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h1>Tech LoL Photo Gallery</h1>
+    <p>Enjoy Photos that have been submitted by our members</p>
+  </div>
+</div>
 
-    <title>Photo Gallery</title>
+<div class="container">
+  <div id="main_area">
+    <!-- Slider -->
+    <div class="row">
+      <div class="col-sm-12" id="slider">
+        <!-- Top part of the slider -->
+        <div class="row">
+          <div class="col-sm-2" id="empty"></div>
+          <div class="col-sm-8" id="carousel-bounding-box">
+            <div class="carousel slide" id="myCarousel">
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                  <div class="active item" data-slide-number="0">
+                    <%= image_tag "tech_lol_banner.jpg" %></div>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">TechLOL</a>
+                <% @images.each_with_index do |image, index| %>
+                  <div class="item" data-slide-number="<%= index + 1 %>">
+                    <%= image_tag "photo_gallery/#{image.split('/').last}" %>
+                  </div>
+                <% end %>
+              </div><!-- Carousel nav -->
+              <a class="carousel-control left" data-slide="prev" href="#myCarousel">‹</a> <a class="carousel-control right" data-slide="next" href="#myCarousel">›</a>
+            </div>
+          </div>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/events/index">Events</a></li>
-            <li><a href="/rift_warriors/index">Rift Warriors</a></li>
-            <li><a href="/tech_lol_series/index">Tech LoL Series</a></li>
-            <li class="active"><a href="/photo_gallery/index">Photo Gallery</a></li>
+      </div><!--/Slider-->
+
+    <div class="row hidden-phone" id="slider-thumbs">
+      <div class="col-sm-12">
+          <!-- Bottom switcher of slider -->
+          <ul class="thumbnails clearfix">
+              <li class="col-sm-2">
+                <a class="thumbnail" id="carousel-selector-0">
+                  <%= image_tag "tech_lol_banner.jpg" %>
+                </a>
+              </li>
+            <% @images.each_with_index do |image, index| %>
+              <li class="col-sm-2">
+                <a class="thumbnail" id="carousel-selector-<%= index + 1 %>">
+                  <%= image_tag "photo_gallery/#{image.split('/').last}" %>
+                </a>
+              </li>
+            <% end %>
           </ul>
-        </div><!--/.navbar-collapse -->
       </div>
     </div>
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Tech LoL Photo Gallery</h1>
-        <p>Enjoy Photos that have been submitted by our members</p>
-      </div>
-    </div>
-
-     <% @images.each do |image| %>
-       <%= image_tag "photo_gallery/#{image.split('/').last}", :class => "img-rounded image_box" %>
-     <% end %>
-    </div>
-
-    <div class="container">
-
-      <hr>
-
-      <footer>
-        <p>&copy; Alex Myers 2013</p>
-      </footer>
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../assets/js/jquery.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-  </body>
-</html>
+  </div>
+</div>
