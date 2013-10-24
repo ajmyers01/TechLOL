@@ -32,11 +32,13 @@
     </header>
 
     <div class="container">
-      <%= yield %>
+      <body class="background">
+        <%= yield %>
 
-      <footer>
-        <p>&copy; Alex Myers 2013</p>
-      </footer>
+        <footer>
+          <p>&copy; Alex Myers 2013</p>
+        </footer>
+      </body>
     </div>
     <%= javascript_include_tag "application" %>
   </body>
