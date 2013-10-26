@@ -12,4 +12,53 @@
     background-image: url(background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-color: black;
+    background-size: 100% 100%;
   }
+
+.nav-bar-image {
+    background-image: url(nav_bar.png);
+    background-size: 100% 100%;
+}
+.navbar-nav a{
+  color: #D12E29;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.navbar-nav > li > a:hover {
+  background-color: transparent;
+  color: #7CBAF8;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.navbar-brand {
+  color: #D12E29;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  background-color: transparent;
+  text-decoration: none;
+  color: #7CBAF8;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+a {
+  color: black;
+}
+
+.jumbotron-space {
+    padding-top: 25px;
+}
+
+.content-gradient {
+  background-color: #3F80A8;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#325889), to(#3F80A8), color-stop(.5,#2B67AF));
+  background: -moz-linear-gradient(top, #325889 0%, #2B67AF 50%, #3F80A8 100%);
+  opacity: 0.9;
+}
+.jumbotron h1,
+h2, h3, p {
+  color: black;
+}

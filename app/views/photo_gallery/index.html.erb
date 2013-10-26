@@ -1,8 +1,10 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container">
-    <h1>Tech LoL Photo Gallery</h1>
-    <p>Enjoy Photos that have been submitted by our members</p>
+<div class="jumbotron-space">
+  <div class="jumbotron content-gradient">
+    <div class="container">
+      <h1>Tech LoL Photo Gallery</h1>
+      <p>Enjoy Photos that have been submitted by our members</p>
+    </div>
   </div>
 </div>
 
@@ -27,7 +29,8 @@
                   </div>
                 <% end %>
               </div><!-- Carousel nav -->
-              <a class="carousel-control left" data-slide="prev" href="#myCarousel">‹</a> <a class="carousel-control right" data-slide="next" href="#myCarousel">›</a>
+              <a class="carousel-control left" data-slide="prev" href="#myCarousel">‹</a>
+              <a class="carousel-control right" data-slide="next" href="#myCarousel">›</a>
             </div>
           </div>
         </div>
@@ -36,15 +39,15 @@
     <div class="row hidden-phone" id="slider-thumbs">
       <div class="col-sm-12">
           <!-- Bottom switcher of slider -->
-          <ul class="thumbnails clearfix">
-              <li class="col-sm-2">
-                <a class="thumbnail" id="carousel-selector-0">
+          <ul class="thumbnails clearfix ">
+              <li class="col-sm-2 content-gradient">
+                <a class="thumbnail " id="carousel-selector-0">
                   <%= image_tag "tech_lol_banner.jpg" %>
                 </a>
               </li>
             <% @images.each_with_index do |image, index| %>
-              <li class="col-sm-2">
-                <a class="thumbnail" id="carousel-selector-<%= index + 1 %>">
+              <li class="col-sm-2 content-gradient">
+                <a class="thumbnail content-gradient" id="carousel-selector-<%= index + 1 %>">
                   <%= image_tag "photo_gallery/#{image.split('/').last}" %>
                 </a>
               </li>
