@@ -4,6 +4,7 @@ development:
   pool: 5
   timeout: 5432
   host: localhost
+
 test:
   adapter: postgresql
   database: techlol_test
